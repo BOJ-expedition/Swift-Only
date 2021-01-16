@@ -29,12 +29,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // 텍스트 필드의 내용이 변경될 때 호출
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         print("텍스트 필드의 내용이 \(string) 으로 변경됩니다")
-        if Int(string) == nil {
-            return true
-        } else {
-            return false
+        if self.turnTextField.isOn {
+            if Int(string) == nil {
+                
+                if (textField.text?.count)! + string.count > 10 {
+                    return false
+                } else {
+                    return true
+                }
+            }
         }
-//        return true // false 를 리턴하면 내용이 변경되지 않는다!
+        return false
     }
     
     // 텍스트 필드의 리턴키가 눌러졌을 때 호출
@@ -92,6 +97,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.tf.resignFirstResponder()
     }
     
+
+    @IBOutlet var turnTextField: UISwitch!
     
     @IBAction func input(_ sender: Any) {
         self.tf.becomeFirstResponder()
