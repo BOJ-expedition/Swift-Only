@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  HelloWorld
-//
-//  Created by 송하민 on 2021/02/12.
-//
-
 // 1. main() 함수가 실행된다.
 // 2. main() 함수는 다시 UIApplicationMain() 함수를 호출한다.
 // 3. UIApplicationMain() 함수는 앱의 본체에 해당하는 UIApplication 객체를 생성한다.
