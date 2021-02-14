@@ -30,6 +30,7 @@ xcuserdata/
 *.moved-aside
 *.xccheckout
 *.xcscmblueprint
+*.xcassets
 
 ## Obj-C/Swift specific
 *.hmap
