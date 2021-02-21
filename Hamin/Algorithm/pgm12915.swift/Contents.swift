@@ -1,0 +1,9 @@
+import Foundation
+
+func solution(_ strings:[String], _ n:Int) -> [String] {
+    
+    return strings.sorted(by:{ Array($0)[n] == Array($1)[n] ? $0 < $1 : Array($0)[n] < Array($1)[n]  })
+}
+
+print(solution(["sun", "bed", "car"], 1))
+
