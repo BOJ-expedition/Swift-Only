@@ -1,0 +1,10 @@
+class Solution {
+    func addDigits(_ num: Int) -> Int {
+        var num = num
+        while num >= 10 {
+            let stringifiedNum = String(num)
+            num = stringifiedNum.map{Int(String($0))!}.reduce(0, +)
+        }
+        return num
+    }
+}
