@@ -1,0 +1,16 @@
+class Solution {
+    func longestCommonPrefix(_ strs: [String]) -> String {
+        for str in strs {
+            for (i, _) in str.enumerated().reversed() {
+                let lastIndex = str.index(str.startIndex, offsetBy: i)
+                let p = str[str.startIndex...lastIndex]
+                let c = strs.filter{$0.hasPrefix(p)}.count
+                if c == strs.count {
+                    return String(p)
+                }
+            }
+            
+        }
+        return ""
+    }
+}
