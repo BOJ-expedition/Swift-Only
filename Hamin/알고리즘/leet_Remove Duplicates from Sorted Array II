@@ -1,0 +1,13 @@
+class Solution {
+    func removeDuplicates(_ nums: inout [Int]) -> Int {
+        for (i,v) in nums.enumerated() {
+            let fcount = nums.filter{$0==v}.count
+            if fcount > 2 {
+                let startpoint = nums.firstIndex(of: v)!
+                let lastIndex = nums.lastIndex(of: v)!
+                nums.removeSubrange(startpoint+2...lastIndex)
+            }
+        }
+        return nums.count
+    }
+}
