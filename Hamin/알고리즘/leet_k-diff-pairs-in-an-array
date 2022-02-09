@@ -1,0 +1,24 @@
+class Solution {
+    func findPairs(_ nums: [Int], _ k: Int) -> Int {
+        var total = 0
+        var nums: [Int] = nums
+        guard k != 0 else {
+            while !nums.isEmpty {
+                let n = nums.first!
+                nums.removeFirst()
+                if nums.contains(n) {
+                    total += 1
+                }
+                nums.removeAll(where: {$0==n})
+            }
+            return total
+        }
+        var setNums = Set<Int>(nums)
+        while setNums.count != 1 {
+            let n = setNums.first!
+            total += setNums.filter{$0==(n+k) || $0==(n-k)}.count
+            setNums.removeFirst()
+        }
+        return total
+    }
+}
