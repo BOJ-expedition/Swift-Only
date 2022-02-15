@@ -1,0 +1,13 @@
+class Solution {
+    func singleNumber(_ nums: [Int]) -> Int {
+        guard nums.count > 1 else {
+            return nums.first!
+        }
+        for i in nums {
+            if nums.filter{i==$0}.count == 1 {
+                return i   
+            }
+        }
+        return 0
+    }
+}
